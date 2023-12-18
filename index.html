@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Election System</title>
+</head>
+<body>
+    <h1>Online Election System</h1>
+    
+    <h2>Candidates</h2>
+    <ul>
+        {% for candidate, votes in candidates.items() %}
+            <li>{{ candidate }}: {{ votes }} votes</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Register Candidate</h2>
+    <form action="/register" method="post">
+        <label for="candidate_name">Candidate Name:</label>
+        <input type="text" name="candidate_name" required>
+        <button type="submit">Register</button>
+    </form>
+    
+    <h2>Vote</h2>
+    <form action="/vote" method="post">
+        <label for="candidate_name">Candidate Name:</label>
+        <input type="text" name="candidate_name" required>
+        <button type="submit">Vote</button>
+    </form>
+</body>
+</html>
